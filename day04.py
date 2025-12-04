@@ -5,9 +5,9 @@ def solve(input_path):
 
     lines = input_path.open('r').read().strip().split("\n")
 
-    part1 = 0
-    part2 = 0
-    matrix = [[bool(item == "@") for item in row] for row in lines]
+    part1 = 00
+    part2 = 00
+    matrix = [[bool(roll == "@") for roll in row] for row in lines]
 
     part1, part2 = again(matrix, part1, part2)
     return part1, part2
@@ -19,7 +19,7 @@ def again(matrix, part1, part2):
             if not matrix[x][y]:
                 new_matrix[x][y] = False
                 continue
-            adjacent_role = 0
+            adjacent_roll = 0
             for i in [-1, 0, 1]:
                 for j in [-1, 0, 1]:
                     if i == 0 and j == 0:
@@ -29,8 +29,8 @@ def again(matrix, part1, part2):
                     if a < 0 or b < 0 or a >= len(matrix) or b >= len(matrix[0]):
                         continue
                     if matrix[a][b]:
-                        adjacent_role += 1
-            if adjacent_role < 4:
+                        adjacent_roll += 1
+            if adjacent_roll < 4:
                 new_matrix[x][y] = False
                 part1 += 1
             else :
